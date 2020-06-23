@@ -1,7 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from '../logo.svg';
+import '../App.css';
 import { render } from '@testing-library/react';
+import EthnicityChart from './EthnicityChart';
 
 class App extends React.Component {
   constructor() {
@@ -33,6 +34,7 @@ class App extends React.Component {
       <p>{this.state.data[0].school.city}, {this.state.data[0].school.state}, {this.state.data[0].school.zip}</p>
       <p>Student Size: {this.state.data[0].latest.student.size}</p>
       {/* {this.state.data} */}
+      <EthnicityChart data={this.state.data}/>
     </div>
   );
 }
