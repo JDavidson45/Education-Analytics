@@ -3,13 +3,15 @@ import logo from '../logo.svg';
 import '../App.css';
 import { render } from '@testing-library/react';
 import EthnicityChart from './EthnicityChart';
+import ProgramChart from './ProgramChart';
 
 class App extends React.Component {
   constructor() {
     super()
     this.state = {
       loaded: false,
-      data: []
+      data: [],
+      demograph: []
     }
   }
   componentDidMount(){
@@ -17,7 +19,8 @@ class App extends React.Component {
   .then(res => res.json())
   .then(data => this.setState({
     loaded: true,
-    data: data.results
+    data: data.results,
+    // demograph:[this.state.data[0].latest.student.demographics.share_asian.home_ZIP, this.state.data[0].latest.student.demographics.share_black.home_ZIP, this.state.data[0].latest.student.demographics.share_hispanic.home_ZIP, this.state.data[0].latest.student.demographics.share_white.home_ZIP]
   }))
   }
   render() {
@@ -34,7 +37,8 @@ class App extends React.Component {
       <p>{this.state.data[0].school.city}, {this.state.data[0].school.state}, {this.state.data[0].school.zip}</p>
       <p>Student Size: {this.state.data[0].latest.student.size}</p>
       {/* {this.state.data} */}
-      <EthnicityChart data={this.state.data}/>
+      <EthnicityChart demograph={[this.state.data[0].latest.student.demographics.share_asian.home_ZIP, this.state.data[0].latest.student.demographics.share_black.home_ZIP, this.state.data[0].latest.student.demographics.share_hispanic.home_ZIP, this.state.data[0].latest.student.demographics.share_white.home_ZIP]} data={this.state.data}/>
+      <ProgramChart data={this.state.data}/>
     </div>
   );
 }

@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+#ethnicityChart {
+  width: 500px;
+  height: 500px;
+}
