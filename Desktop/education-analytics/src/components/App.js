@@ -4,6 +4,8 @@ import '../App.css';
 import { render } from '@testing-library/react';
 import EthnicityChart from './EthnicityChart';
 import ProgramChart from './ProgramChart';
+import Pdf from "react-to-pdf";
+import ReactToPrint from 'react-to-print';
 
 class App extends React.Component {
   constructor() {
@@ -11,7 +13,8 @@ class App extends React.Component {
     this.state = {
       loaded: false,
       data: [],
-      demograph: []
+      demograph: [],
+      ref: React.createRef()
     }
   }
   componentDidMount(){
@@ -31,6 +34,17 @@ class App extends React.Component {
     }
   return (
     <div className="App">
+       <ReactToPrint
+          trigger={() => {
+            return <button>Print</button>;
+          }}
+          content={() => this.componentRef}
+        />
+      <Pdf targetRef={this.state.ref} filename="Wisconsin-Madison-Stats.pdf">
+      {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
+      </Pdf>
+      <div ref={this.state.ref}>
+      <div ref={el => (this.componentRef = el)}>
       <h1>{this.state.data[0].school.name}</h1>
       <h2>Alias: {!this.state.data[0].school.alias ? 'N/A' : ''}</h2>
       <p>{this.state.data[0].school.school_url}</p>
@@ -39,6 +53,8 @@ class App extends React.Component {
       {/* {this.state.data} */}
       <EthnicityChart demograph={[this.state.data[0].latest.student.demographics.share_asian.home_ZIP, this.state.data[0].latest.student.demographics.share_black.home_ZIP, this.state.data[0].latest.student.demographics.share_hispanic.home_ZIP, this.state.data[0].latest.student.demographics.share_white.home_ZIP]} data={this.state.data}/>
       <ProgramChart data={this.state.data}/>
+      </div>
+      </div>
     </div>
   );
 }
