@@ -6,6 +6,7 @@ import EthnicityChart from './EthnicityChart';
 import ProgramChart from './ProgramChart';
 import Pdf from "react-to-pdf";
 import ReactToPrint from 'react-to-print';
+import TuitionChart from './TuitionChart';
 
 class App extends React.Component {
   constructor() {
@@ -53,6 +54,7 @@ class App extends React.Component {
       {/* {this.state.data} */}
       <EthnicityChart demograph={[this.state.data[0].latest.student.demographics.share_asian.home_ZIP, this.state.data[0].latest.student.demographics.share_black.home_ZIP, this.state.data[0].latest.student.demographics.share_hispanic.home_ZIP, this.state.data[0].latest.student.demographics.share_white.home_ZIP]} data={this.state.data}/>
       <ProgramChart data={this.state.data}/>
+      <TuitionChart data={this.state.data}/>
       </div>
       </div>
     </div>
