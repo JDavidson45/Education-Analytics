@@ -62,7 +62,6 @@ class ProgramChart extends React.Component {
   }
 
   render() {
-      console.log(Object.values(this.props.data[0].latest.academics.program_percentage));
     return (
       <div id='programChart'>
         <Doughnut id='program'

@@ -30,18 +30,15 @@ class App extends React.Component {
         this.setState({
           loaded: true,
           data: data.results,
-          // demograph:[this.state.data[0].latest.student.demographics.share_asian.home_ZIP, this.state.data[0].latest.student.demographics.share_black.home_ZIP, this.state.data[0].latest.student.demographics.share_hispanic.home_ZIP, this.state.data[0].latest.student.demographics.share_white.home_ZIP]
         })
       );
   }
   render() {
-    console.log(this.state.data[0]);
-    //const school = this.state.data[0].school || {}
     if (this.state.loaded === false) {
       return <h1>Loading...</h1>;
     }
     return (
-      <div className="App">
+      <div className="App" ref={this.state.ref}>
         <Navbar expand="sm" variant="dark" bg="dark">
           <div id="buttons">
             <Navbar.Brand>
@@ -70,7 +67,7 @@ class App extends React.Component {
             </Navbar.Brand>
           </div>
         </Navbar>
-        <div ref={this.state.ref}>
+        <div >
           <div ref={el => (this.componentRef = el)}>
             <div id='intro'>
           <img id='pic' src='https://images.squarespace-cdn.com/content/v1/5a71eff78dd0418fa3dcb980/1517966666021-BJFCB7Y9VVQEN4KLPIHT/ke17ZwdGBToddI8pDm48kO2pS9cMHbO4RvHPc8Skf1tZw-zPPgdn4jUwVcJE1ZvWhcwhEtWJXoshNdA9f1qD7SSwGn0TPzISNt3iSJufpcvR7xFZ2oYA-YTitnkXPCuTgiUfhLEJ_Uxi_cK3qclb8w/press-page-uwmadisonlogo-074ba7ec6da2e973d30ab6851f14f96002ec5a744e9712a837484b038c28c97c.png'/>
