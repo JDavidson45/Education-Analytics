@@ -10,7 +10,9 @@ class ProgramChart extends React.Component {
       chartData: {
         labels: Object.keys(
           this.props.data[0].latest.academics.program_percentage
-        ),
+        ).map(program => {
+          return program.includes('_') ? program.replace(/_/g, ' ') : program
+        }),
         datasets: [
           {
             data: Object.values(
