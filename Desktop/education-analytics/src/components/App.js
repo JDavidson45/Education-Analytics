@@ -10,6 +10,7 @@ import TuitionChart from './TuitionChart';
 import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import DownloadData from './DownloadData';
 
 class App extends React.Component {
   constructor() {
@@ -34,6 +35,7 @@ class App extends React.Component {
       );
   }
   render() {
+    console.log(this.state.data)
     if (this.state.loaded === false) {
       return <h1>Loading...</h1>;
     }
@@ -65,7 +67,9 @@ class App extends React.Component {
                 </Pdf>
               </Nav>
             </Navbar.Brand>
+
           </div>
+          <DownloadData data={this.state.data}/>
         </Navbar>
         <div >
           <div ref={el => (this.componentRef = el)}>
@@ -90,6 +94,7 @@ class App extends React.Component {
             />
             <ProgramChart data={this.state.data} />
             <TuitionChart data={this.state.data} />
+
             <Navbar expand="sm" variant="dark" bg="dark">
             <Navbar.Brand>{this.state.data[0].school.school_url}</Navbar.Brand>
             <Navbar.Brand className="ml-auto">
@@ -97,6 +102,7 @@ class App extends React.Component {
               {this.state.data[0].school.state}.{this.state.data[0].school.zip}
             </Navbar.Brand>
             </Navbar>
+
           </div>
         </div>
       </div>

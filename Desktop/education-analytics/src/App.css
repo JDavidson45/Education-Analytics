@@ -93,3 +93,13 @@
   flex-wrap: nowrap;
   position: relative;
 }
+#data {
+  background-color: #343a40;
+  border: solid #343a40;
+  color: rgba(255,255,255,0.5)
+}
+#holder {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
