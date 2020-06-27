@@ -27,7 +27,7 @@ this.state = {
     console.log(this.props, this.props.data[0].latest.student.demographics.share_white.home_ZIP)
   return (
     <div id='ethnicityChart'>
-      <Doughnut
+      <Doughnut id='chart'
   data={this.state.chartData}
   options={{title: {
     display: true,

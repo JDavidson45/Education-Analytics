@@ -25,7 +25,7 @@ this.state = {
   render() {
   return (
     <div id='ethnicityChart'>
-      <Bar
+      <Bar id='bar'
   data={this.state.chartData}
   options={{title: {
     display: true

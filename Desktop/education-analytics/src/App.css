@@ -38,5 +38,35 @@
 }
 #ethnicityChart {
   width: 500px;
-  height: 500px;
+  height: 250px;
+  margin: 5px;
+}
+#programChart {
+  width: 900px;
+  height: 450px;
+  align-content: center
+}
+#name {
+  justify-content: flex-end;
+}
+#intro {
+background-color: maroon;
+color: black;
+}
+#chart {
+position: absolute;
+left: 30%;
+top: 60%;
+margin: 5px
+}
+#program {
+  position: absolute;
+left: 15%;
+top: 97%;
+margin: 5px;
+}
+#bar {
+  position: absolute;
+  left: 29%;
+margin: 10px;
 }
