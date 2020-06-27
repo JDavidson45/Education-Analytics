@@ -37,36 +37,64 @@
   }
 }
 #ethnicityChart {
+  display: flex;
   width: 500px;
   height: 250px;
-  margin: 5px;
+  margin: 10px;
 }
 #programChart {
+  display: flex;
   width: 900px;
   height: 450px;
-  align-content: center
+  align-content: center;
+
+}
+#pic {
+  display: flex;
+  justify-content: center;
+  margin-left: 42%;
+
+}
+#alias {
+  display: flex;
+  justify-content: center;
+  margin-left: -1%;
+}
+#size {
+  display: flex;
+  /* justify-content: center; */
+ margin-left: 44%;
 }
 #name {
-  justify-content: flex-end;
+  display: flex;
+  /* justify-content: center; */
+  margin-left: 32%;
 }
 #intro {
+margin: auto 0;
+max-width: 100%;
 background-color: maroon;
 color: black;
 }
 #chart {
-position: absolute;
+display: flex;
 left: 30%;
 top: 60%;
-margin: 5px
+margin-left: 72%
 }
 #program {
-  position: absolute;
+display: flex;
 left: 15%;
 top: 97%;
-margin: 5px;
+justify-content: center;
+margin: auto 0;
+margin-left: 18%
+
 }
 #bar {
-  position: absolute;
+display: flex;
   left: 29%;
-margin: 10px;
+margin: 8px;
+margin-left: 68%
+
 }

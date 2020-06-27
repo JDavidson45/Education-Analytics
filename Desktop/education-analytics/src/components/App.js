@@ -44,7 +44,7 @@ class App extends React.Component {
       <div className="App">
         <Navbar expand="sm" variant="dark" bg="dark">
           <div id="buttons">
-            <Navbar.Brand className="ml-auto">
+            <Navbar.Brand>
               <Nav>
                 <ReactToPrint
                   trigger={() => {
@@ -75,8 +75,8 @@ class App extends React.Component {
             <div id='intro'>
           <img id='pic' src='https://images.squarespace-cdn.com/content/v1/5a71eff78dd0418fa3dcb980/1517966666021-BJFCB7Y9VVQEN4KLPIHT/ke17ZwdGBToddI8pDm48kO2pS9cMHbO4RvHPc8Skf1tZw-zPPgdn4jUwVcJE1ZvWhcwhEtWJXoshNdA9f1qD7SSwGn0TPzISNt3iSJufpcvR7xFZ2oYA-YTitnkXPCuTgiUfhLEJ_Uxi_cK3qclb8w/press-page-uwmadisonlogo-074ba7ec6da2e973d30ab6851f14f96002ec5a744e9712a837484b038c28c97c.png'/>
              <h2 id="name">{this.state.data[0].school.name}</h2>
-            <p>Alias: {!this.state.data[0].school.alias ? 'N/A' : ''}</p>
-            <p>Student Size: {this.state.data[0].latest.student.size}</p>
+            <p id='alias'>Alias: {!this.state.data[0].school.alias ? 'N/A' : ''}</p>
+            <p id='size'>Student Size: {this.state.data[0].latest.student.size}</p>
             </div>
             <EthnicityChart
               demograph={[
@@ -95,9 +95,9 @@ class App extends React.Component {
             <TuitionChart data={this.state.data} />
             <Navbar expand="sm" variant="dark" bg="dark">
             <Navbar.Brand>{this.state.data[0].school.school_url}</Navbar.Brand>
-            <Navbar.Brand>
+            <Navbar.Brand className="ml-auto">
               {this.state.data[0].school.city},{' '}
-              {this.state.data[0].school.state}, {this.state.data[0].school.zip}
+              {this.state.data[0].school.state}.{this.state.data[0].school.zip}
             </Navbar.Brand>
             </Navbar>
           </div>
