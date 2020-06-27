@@ -33,8 +33,8 @@ class DownloadData extends React.Component {
               this.props.data[0].latest.academics.program_percentage
             ).map((program, i) => {
               return program.includes('_') ? (
-                <tr key={i}>
-                  <td>{program.replace(/_/g, ' ')}</td>
+                <tr>
+                  <td key={i}>{program.replace(/_/g, ' ')}</td>
                   <td>
                     {Object.values(
                       this.props.data[0].latest.academics.program_percentage
@@ -43,7 +43,7 @@ class DownloadData extends React.Component {
                 </tr>
               ) : (
                 <tr>
-                  <td>{program}</td>
+                  <td key={i}>{program}</td>
                   <td>
                     {Object.values(
                       this.props.data[0].latest.academics.program_percentage

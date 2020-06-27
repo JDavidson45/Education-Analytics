@@ -1,1 +1,1 @@
-Hi welcome to my project. Simply npm install and npm start to get the web app up and running. It will be on localhost:3000. This will show you the latest statistics from University of Wisconsin-Madison using an API for schools. hope you enjoy.
+Hi welcome to my project. Fork and clone the repo and simply npm install and npm start to get the web app up and running. It will be on localhost:3000. This will show you the latest statistics from University of Wisconsin-Madison using an API for schools. hope you enjoy.
